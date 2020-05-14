@@ -3,8 +3,8 @@ public interface ShopManage {
 
     void createProduct();
 
-    void delete(int id);
-//    void delete(String name);
+//    void delete(int id);
+    void delete(String name);
 
     void edit(int id);
 
