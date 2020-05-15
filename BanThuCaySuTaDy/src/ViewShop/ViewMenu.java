@@ -21,7 +21,7 @@ public class ViewMenu {
         System.out.print("Mời Chọn: ");
         Scanner input = new Scanner(System.in);
         int choose = input.nextInt();
-        input.nextLine();
+       input.nextLine();
         switch (choose) {
             case 1:
                 pm.display();
@@ -91,8 +91,6 @@ public class ViewMenu {
                 break;
             case 3:
                 System.out.println("Bạn Mua:");
-//                int deleteId = input.nextInt();
-//                pm.delete(deleteId);
                 String deleteName = input.nextLine();
                 pm.delete(deleteName);
                 break;
@@ -125,21 +123,36 @@ public class ViewMenu {
 
     public static void main(String[] args) throws IOException {
         Repository repo = new Repository();
-        System.out.println("ĐĂNG NHẬP:");
-        Scanner input = new Scanner(System.in);
-        String userName = input.nextLine();
-        String UserName = "LE HUU LUC";
-        System.out.print("PASSSWROD:");
-        Scanner InPut = new Scanner(System.in);
-        String password = InPut.nextLine();
-        String Password = "04/03/2001";
-        if (UserName.equals(userName) && Password.equals(password)) {
-            Manager pm = new Manager(repo);
-            menu(pm);
-            return;
-        } else {
-            Manager Pm = new Manager(repo);
-            Menu(Pm);
+        System.out.println("CHÀO MỪNG BẠN TỚI VỚI SHOP");
+        System.out.println("1.Bạn Là Quản Lí");
+        System.out.println("2.Bạn Là KHÁCH HÀNG");
+        System.out.println("Mời Chọn:");
+        Scanner login = new Scanner(System.in);
+        int choose = login.nextInt();
+        login.nextLine();
+        switch (choose) {
+            case 1:
+                System.out.println("ĐĂNG NHẬP:");
+                Scanner input = new Scanner(System.in);
+                String userName = input.nextLine();
+                String UserName = "LE HUU LUC";
+                System.out.print("PASSSWROD:");
+                Scanner InPut = new Scanner(System.in);
+                String password = InPut.nextLine();
+                String Password = "04/03/2001";
+                if (UserName.equals(userName) && Password.equals(password)) {
+                    Manager pm = new Manager(repo);
+                    menu(pm);
+                    break;
+                }else {
+                    System.out.println("Bạn Không Phải Quản Lí...Có lẻ Bạn Là KhácH Hàng");
+                }
+            case 2:
+                Manager Pm = new Manager(repo);
+                Menu(Pm);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + choose);
         }
     }
 }

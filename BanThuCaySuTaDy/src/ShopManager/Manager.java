@@ -52,29 +52,6 @@ public class Manager implements ShopManager {
             }
         }
     }
-
-//            @Override
-//    public void delete(int id) {
-//        for (int i = 0; i < this.list.size(); i++) {
-//            if (this.list.get(i).getID() == id) {
-//                this.list.remove(i);
-//                update();
-//                break;
-//            }
-//        }
-//    }
-//    @Override
-//    public void delete(String name) {
-//
-//        for (Shop sp : list) {
-//            if (sp.getName().trim().equals(name.trim())) {
-//                list.remove(sp);
-//            }
-//            break;
-//        }
-//        update();
-//        System.out.println("Xin Cảm Mơn Qúy Khách");
-//    }
     @Override
     public void delete(String name) {
         Shop objDelete = new Shop();
@@ -107,9 +84,6 @@ public class Manager implements ShopManager {
                 update();
                 break;
             }
-//            else {
-//                System.out.println("Đồ bạn muốn thay đổi không tồn tại");
-//            }
         }
     }
 
@@ -150,38 +124,16 @@ public class Manager implements ShopManager {
     @Override
     public void find(String name) {
 
-//        for (int i = 0; i < this.list.size(); i++) {
-//            if (this.list.get(i).getName().equals(name)) {
-//                System.out.println(this.list.get(i).toString());
-//                break;
-//            }
-//        }
-//        ArrayList<Shop> sp = this.list;
-//        Shop tempPro;
-//        for (int i = 0; i < sp.size(); i++) {
-//            if (sp.get(i).getName().equals(name)) {
-//                System.out.print("Product " + (Integer) (i + 1) + ": ");
-//                System.out.println(sp.get(i).toString());
-//                break;
-//            }
-//        }
-        ArrayList<Shop> shop = this.list;
-        if (shop.size() == 0) {
-            System.out.println("Shop Hiện Tại Vẩn Chưa Mở Bán");
-        } else {
-            boolean timthay = false;
-            for (Shop sp : list) {
-                if (sp.getName().equals(name)) {
-                    System.out.println(sp.toString());
-                    timthay = true;
-                    break;
-                }
-            }
-            if (timthay == false) {
-                System.out.println("Đồ bạn Muốn Tìm Shop hiện không có" + name);
+        Shop obj = new Shop();
+        for (int i = 0; i < this.list.size(); i++) {
+            if (this.list.get(i).getName().trim().equals(name.trim())) {
+                obj = this.list.get(i);
+                break;
             }
         }
-    }
+      System.out.println(obj);
+        update();
+   }
 
     private void update() {
         try {
@@ -197,9 +149,5 @@ public class Manager implements ShopManager {
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
-    }
-
-    private void revenue() {
-        ArrayList<Shop> shop = this.list;
     }
 }
