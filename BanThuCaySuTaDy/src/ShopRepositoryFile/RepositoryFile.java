@@ -12,12 +12,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RepositoryFile {
-    Repository repository = new Repository();
-    public ArrayList<Shop> ArrayRepoList;
-
-    public RepositoryFile() throws IOException {
-        ArrayRepoList = repository.repoList;
-    }
 
     public static void main(String[] args) {
         try {

@@ -38,7 +38,7 @@ public class Shop {
     @Override
     public String toString() {
         return "Shop{" +
-                "Name='" + getName() +
+                "Name=" + getName() +
                 ", ID=" + getID() +
                 ", Price=" + getPrice() + '}';
     }

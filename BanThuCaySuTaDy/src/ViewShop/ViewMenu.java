@@ -21,7 +21,7 @@ public class ViewMenu {
         System.out.print("Mời Chọn: ");
         Scanner input = new Scanner(System.in);
         int choose = input.nextInt();
-       input.nextLine();
+        input.nextLine();
         switch (choose) {
             case 1:
                 manager.display();
@@ -60,8 +60,7 @@ public class ViewMenu {
                 System.out.println("vui lòng chọn lại !");
                 break;
             case 6:
-                System.out.println("Cảm Mơn Qúy Khách Đã Ghé ThĂm..." +
-                        "Hẹn Gặp Lại Qúy Khách");
+                System.out.println("Hẹn Gặp Lại ");
                 return;
         }
         menu(manager);
@@ -144,7 +143,7 @@ public class ViewMenu {
                     Manager pm = new Manager(repo);
                     menu(pm);
                     break;
-                }else {
+                } else {
                     System.out.println("Bạn Không Phải Quản Lí...Có lẻ Bạn Là KhácH Hàng");
                 }
             case 2:
