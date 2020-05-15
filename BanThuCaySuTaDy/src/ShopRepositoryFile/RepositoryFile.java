@@ -13,10 +13,10 @@ import java.util.regex.Pattern;
 
 public class RepositoryFile {
     Repository repository = new Repository();
-    public ArrayList<Shop> repoList;
+    public ArrayList<Shop> ArrayRepoList;
 
     public RepositoryFile() throws IOException {
-        repoList = repository.repoList;
+        ArrayRepoList = repository.repoList;
     }
 
     public static void main(String[] args) {
