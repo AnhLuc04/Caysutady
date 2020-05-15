@@ -27,22 +27,14 @@ public class RepositoryFile {
             String content = scanner.next();
             scanner.close();
             content = content.replaceAll("\\n+", "");
-//            Pattern p = Pattern.compile(" data-title=\"(.*?)\"data-score");tất cả
-//            Matcher P = p.matcher(content);
             Pattern name = Pattern.compile("data-title=\"(.*?)\" data-price");
             Pattern price = Pattern.compile(" data-price=\"(.*?)\" data-id");
             Pattern id = Pattern.compile("a data-id=\"(.*?)\" href");
             Matcher Name = name.matcher(content);
             Matcher Price = price.matcher(content);
             Matcher ID = id.matcher(content);
-//            while (Name.find() && Price.find() && ID.find()) {
-//                System.out.println("Tên=" + Name.group(1));
-//                System.out.println("Gía=" + Price.group(1));
-//                System.out.println("ID=" + ID.group(1));
-//            }
             //GHI DỮ LIỆU VÀO FILE
             File file = new File("C:\\Users\\Admin\\IdeaProjects\\Text2\\BanThuCaySuTaDy\\src\\ShopRepositoryFile\\Shop.txt");
-//            file.createNewFile();
             FileWriter os = new FileWriter(file);
             BufferedWriter bff = new BufferedWriter(os);
             while (Name.find() && ID.find() && Price.find()) {

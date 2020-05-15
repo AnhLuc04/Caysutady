@@ -90,7 +90,6 @@ public class Manager implements ShopManager {
     @Override
     public void sort(boolean type) {
         ArrayList<Shop> sp = this.list;
-        Shop tempPro;
         if (type) {
             for (int i = 0; i < sp.size() - 1; i++) {
                 for (int j = 0; j < sp.size() - 1; j++) {
@@ -124,14 +123,14 @@ public class Manager implements ShopManager {
     @Override
     public void find(String name) {
 
-        Shop obj = new Shop();
+        Shop sp = new Shop();
         for (int i = 0; i < this.list.size(); i++) {
             if (this.list.get(i).getName().trim().equals(name.trim())) {
-                obj = this.list.get(i);
+                sp = this.list.get(i);
                 break;
             }
         }
-      System.out.println(obj);
+      System.out.println(sp);
         update();
    }
 

@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ViewMenu {
 
-    public static void menu(Manager pm) {
+    public static void menu(Manager manager) {
         System.out.println("--------------------------------------------------------------------------------------------");
         System.out.println("XIN CHÀO ADMIN:");
         System.out.println("1.XEM TẤt CẢ");
@@ -24,21 +24,21 @@ public class ViewMenu {
        input.nextLine();
         switch (choose) {
             case 1:
-                pm.display();
+                manager.display();
                 break;
             case 2:
-                pm.createProduct();
+                manager.createProduct();
                 break;
             case 3:
                 int editId;
                 System.out.print("Nhập ID sản Phẩm để thay đổi mẫu mã: ");
                 editId = input.nextInt();
-                pm.edit(editId);
+                manager.edit(editId);
                 break;
             case 4:
                 System.out.println("Đồ Qúy Khách Muốn Tìm Là ?");
                 String searchName = input.nextLine();
-                pm.find(searchName);
+                manager.find(searchName);
                 break;
             case 5:
                 System.out.println("Bạn Muốn Sắp xếp Lại Cửa Hàng:");
@@ -48,10 +48,10 @@ public class ViewMenu {
                 int sortOption = input.nextInt();
                 switch (sortOption) {
                     case 1:
-                        pm.sort(true);
+                        manager.sort(true);
                         break;
                     case 2:
-                        pm.sort(false);
+                        manager.sort(false);
                         break;
                 }
                 break;
@@ -64,10 +64,10 @@ public class ViewMenu {
                         "Hẹn Gặp Lại Qúy Khách");
                 return;
         }
-        menu(pm);
+        menu(manager);
     }
 
-    public static void Menu(Manager pm) {
+    public static void Menu(Manager manager) {
         System.out.println("--------------------------------------------------------------------------------------------");
         System.out.println("XIN CHÀO:");
         System.out.println("1.XEM TẤt CẢ");
@@ -82,17 +82,17 @@ public class ViewMenu {
         input.nextLine();
         switch (choose) {
             case 1:
-                pm.display();
+                manager.display();
                 break;
             case 2:
                 System.out.println("Đồ Bạn MUốn Mua");
                 String searchName = input.nextLine();
-                pm.find(searchName);
+                manager.find(searchName);
                 break;
             case 3:
                 System.out.println("Bạn Mua:");
                 String deleteName = input.nextLine();
-                pm.delete(deleteName);
+                manager.delete(deleteName);
                 break;
             case 4:
                 System.out.println("Bạn Muốn Xem Mẫu Nào:");
@@ -102,10 +102,10 @@ public class ViewMenu {
                 int sortOption = input.nextInt();
                 switch (sortOption) {
                     case 1:
-                        pm.sort(true);
+                        manager.sort(true);
                         break;
                     case 2:
-                        pm.sort(false);
+                        manager.sort(false);
                         break;
                 }
                 break;
@@ -118,7 +118,7 @@ public class ViewMenu {
                         "Hẹn Gặp Lại Qúy Khách");
                 return;
         }
-        Menu(pm);
+        Menu(manager);
     }
 
     public static void main(String[] args) throws IOException {

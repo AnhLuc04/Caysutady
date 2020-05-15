@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import static java.lang.Integer.parseInt;
 
 public class Repository {
-    public ArrayList<Shop> repoList = new ArrayList<>();;
+    public ArrayList<Shop> repoList =new ArrayList<>();
 
     public Repository() throws IOException {
 
-        BufferedReader bufReader = new BufferedReader(new FileReader("C:\\Users\\Admin\\IdeaProjects\\Text2\\CaseStudy\\src\\Shop.txt"));
+        BufferedReader bufReader = new BufferedReader(new FileReader("C:\\Users\\Admin\\IdeaProjects\\Text2\\BanThuCaySuTaDy\\src\\ShopRepositoryFile\\Shop.txt"));
         String line = bufReader.readLine();
         while (line != null) {
             Shop a = new Shop();
